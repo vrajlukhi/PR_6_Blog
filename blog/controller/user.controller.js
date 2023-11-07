@@ -26,7 +26,6 @@ const login = async (req, res) => {
     try {
         const userdata = await user.findOne({ email: email })
         if (userdata) {
-            console.log(userdata);
             if (userdata.password == password) {
                 res.cookie("role", userdata.role)
                 res.cookie("id", userdata.id)

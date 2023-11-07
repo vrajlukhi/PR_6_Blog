@@ -188,7 +188,7 @@ You are tasked with building an API for a Blog. The project should include the f
 - there should be these category present
 - technology
 - sports
-- health
+- healthx
 
 - you can add more
 
