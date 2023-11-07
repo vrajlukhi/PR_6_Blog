@@ -38,6 +38,10 @@
                 div.setAttribute("class", "list");
                 document.getElementById("parent-box").append(div);
 
+                div.addEventListener("click" ,() =>{
+                    window.location.href = `/blog/singleBlog/${ele._id}`
+                })
+
             });
         });
 </script>

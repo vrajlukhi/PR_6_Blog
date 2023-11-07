@@ -13,7 +13,9 @@ app.set("views",(__dirname+"/views"))
 
 app.use("/user",router)
 app.use("/blog",blog)
-
+app.use("/",(req,res)=>{
+    res.status(200).send("Welcome to the movie API")
+})
 app.listen(8090,()=>{
     console.log("Server 8090 start");
     connect()

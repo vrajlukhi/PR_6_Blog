@@ -37,8 +37,8 @@ const blogupadate = async (req, res) => {
 const singleblog = async (req, res) => {
   let { id } = req.params
 
-  let singleblog = await blog.findById(id)
-  res.render("singleblog", { singleblog })
+  let singleBlog = await blog.findById(id)
+  res.render("singleBlogPage", { singleBlog })
 }
 
 const likeupdate = async (req, res) => {

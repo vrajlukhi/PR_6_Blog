@@ -24,19 +24,13 @@ const loginui = (req, res) => {
 const login = async (req, res) => {
     let { email, password } = req.body
     try {
-        const userdata = await user.findOne({ email: email })
+        let userdata = await user.findOne({ email: email ,password:password})
         if (userdata) {
-            if (userdata.password == password) {
-                res.cookie("role", userdata.role)
-                res.cookie("id", userdata.id)
-                res.send(`Welcome User ${userdata.username}`)
-            }
-            else {
-                res.status(200).send(`Invalid Credentials.`)
-            }
+            res.cookie("role", userdata.role)
+            res.cookie("id", userdata.id).send(`Welcome User ${userdata.username}`)
         }
         else {
-            res.status(200).send(`Invalid Credentials.`)
+            res.send("Invalid Credentials.")
         }
     }
     catch (error) {
